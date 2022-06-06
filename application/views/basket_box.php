@@ -11,7 +11,8 @@ if(is_array($basket) && !empty($basket)){
 		echo "<li class=\"ui-state-default basket_action_remove\" id=\"".
                      $item."\"><a title=\"".Kohana::lang('common.basket-remove', $item)."\"".
                      "id=\"".$item.
-                     "\"><i class="material-icons">remove</i></a>".
+                     "\"><img width=12px height=12px src=\"".url::base().
+                     "media/images/remove.png\"></a>".
                      pnp::shorten($item)."</li>\n";
 	}
 }
@@ -29,3 +30,4 @@ echo "</div>\n";
 echo "</div><br>\n";
 ?>
 <div id="basket_box"></div>
+
