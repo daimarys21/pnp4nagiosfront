@@ -199,6 +199,21 @@ jQuery(document).ready(function(){
 </script>
 </head>
 <body>
+
+<div id="preloader">
+<div class="preloader"></div>
+<br>
+<br>
+<div class="texto1">Cargando...</div> 
+</div>
+
+<div id="contenido" style="display:none;">
+
+
+<div id="logo">
+<!-- <img src=".../usr/local/pnp4nagios/share/media/images/PNP4.png"> -->
+</div>
+
 <?php if (!empty($graph)) {
      echo $graph;
 } ?>
@@ -217,5 +232,19 @@ jQuery(document).ready(function(){
 <?php if (!empty($docs)) {
      echo $docs;
 } ?>
+
+</div>
+
+<!-- Preloader JS -->
+<script type="text/javascript">
+    window.addEventListener('load', () => {
+
+        document.getElementById('contenido').style.display = 'block';
+        document.getElementById('preloader').style.display = 'none';
+
+    })
+</script>
+
+
 </body>
 </html>
