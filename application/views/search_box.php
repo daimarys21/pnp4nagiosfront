@@ -15,7 +15,6 @@ jQuery(function() {
  </div>
  <div class="p4 ui-widget-content ui-corner-bottom">
    <input type="text" name="host" id="query" class="textbox" />
-   <i class="material-icons">search</i>
  </div>
 </div>
 <p>

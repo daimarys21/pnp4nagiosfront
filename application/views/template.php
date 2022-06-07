@@ -200,6 +200,8 @@ jQuery(document).ready(function(){
 </head>
 <body>
 
+<!-- Preloader -->
+
 <div id="preloader">
 <div class="preloader"></div>
 <br>
@@ -207,12 +209,16 @@ jQuery(document).ready(function(){
 <div class="texto1">Cargando...</div> 
 </div>
 
+
+<!-- Contenido -->
+
 <div id="contenido" style="display:none;">
 
 
-<div id="logo">
-<!-- <img src=".../usr/local/pnp4nagios/share/media/images/PNP4.png"> -->
-</div>
+
+<!-- <div id="logo"> -->
+<!-- <img src=".../usr/local/pnp4nagios/share/media/images/PNP4.png">
+</div> -->
 
 <?php if (!empty($graph)) {
      echo $graph;
