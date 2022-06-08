@@ -216,9 +216,38 @@ jQuery(document).ready(function(){
 
 
 
-<!-- <div id="logo"> -->
-<!-- <img src=".../usr/local/pnp4nagios/share/media/images/PNP4.png">
-</div> -->
+<!-- Navbar-->
+<div class="main-menu">
+    <div class="main-menu-form">
+      <div class="main-menu-btn"></div>
+    </div>  
+    <div class="main-menu-content">
+      <!-- main logo -->
+      <div class="main-menu-logo">
+	<?php echo "<img class=\"logo\" src=\"".url::base()."media/images/PNP4.png\" height=\"100px\" width=\"300p\" style=\"border-radius:120%;\">" ?>
+	<br>
+	<br>
+        <h2 class="titulo">PNP4NAGIOS</h2>
+      </div>
+      <!-- navigation -->
+      <ul class="main-menu-nav">
+        <li><a href="#" class="orange"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li><a href="#" class="yellow"><i class="fa fa-book fa-fw front"></i>Library</a></li>
+        <li><a href="#" class="green"><i class="fa fa-folder fa-fw"></i>Forum</a></li>
+        <li><a href="#" class="purple"><i class="fa fa-envelope fa-fw"></i>Contact</a></li>
+        <li><a href="#" class="red"><i class="fa fa-users fa-fw"></i>About</a></li>
+      </ul>
+  
+      <a href="#" class="main-menu-close"><i class="fa fa-close"></i>Cerrar menu</a>
+    </div>
+  </div>
+  
+
+<!-- Fin Navbar -->
+
+
+
+
 
 <?php if (!empty($graph)) {
      echo $graph;
@@ -250,6 +279,69 @@ jQuery(document).ready(function(){
 
     })
 </script>
+
+
+<!-- Nav bar -->
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+var MainMenu = (function() {
+    var MainMenu = function(config) {
+        config = config || {};
+        this.toggleBtn = $(config.toggleBtn);
+        this.menu = $(config.menu);
+        this.close = $(config.close);
+
+        this.init();
+        config = null;
+    };
+    // public interface
+    MainMenu.prototype = {
+        constructor: MainMenu,
+        init: function() {
+            this.eventManager();
+        },
+        eventManager: function() {
+            this.toggleBtn.on('click.openMenu', onButtonClickHandler.bind(this));
+            this.close.on('click.closeMenu', onCloseClickHandler.bind(this));
+        }
+    };
+    // private interface
+    function onButtonClickHandler(menu, evt) {
+        if (!this.menu.hasClass('open')) {
+            this.menu.addClass('open');
+        };
+
+    }
+
+    function onCloseClickHandler(evt) {
+        this.menu.removeClass('open')
+    }
+
+    function onDocumentClickHandler(evt) {
+        var $target = $(evt.target);
+
+        if (!$target.closest(this.menuForm).length && !$target.closest(this.menuContent).length && this.menu.hasClass('open')) {
+            this.menu.removeClass('open')
+        }
+    }
+
+    return MainMenu;
+})();
+
+
+$(document).ready(function() {
+    var mainMenu = new MainMenu({
+        menu: '.main-menu',
+        toggleBtn: '.main-menu-btn',
+        close: '.main-menu-close'
+    });
+});
+</script>
+
+
+
 
 
 </body>
