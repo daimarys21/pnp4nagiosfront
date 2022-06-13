@@ -1,5 +1,5 @@
-<div class="ui-widget">
- <div class="p2 ui-widget-header ui-corner-top">
+<div class="wid_header">
+ <div class="p2 wid_header ui-corner-top">
 <?php echo Kohana::lang('common.status-box-header') ?>
  </div>
  <div class="p4 ui-widget-content ui-corner-bottom">

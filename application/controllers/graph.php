@@ -127,3 +127,5 @@ class Graph_Controller extends System_Controller  {
         $this->template->graph->header->title = $this->title;
     }
 }
+
+

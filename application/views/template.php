@@ -222,23 +222,38 @@ jQuery(document).ready(function(){
 <div id="contenido" style="display:none;">
 
 
-
 <!-- Navbar-->
-<div style="position: fixed; left: 0px; width: 100%; z-index: 2;">
+<div style="position: fixed; left: 0px; top: 0px; width: 100%; z-index: 2;">
 <section style="color: rgba(29, 29, 29, 0.5);">
             <nav class="circle">
               <ul>
-                <li><?php echo "<img id=\"logo1\" src=\"".url::base()."media/images/PNP4.png\" style=\" height: 100px; width: 280px; border-radius: 20%; border-top-right-radius: 40%; border-top-left-radius: 40%; padding-top: 7px; position: absolute; left: 15%; top: -4%;\">"; ?></li>
-                <li><?php echo "<img id=\"logo2\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" style=\"height: 60px; width: 150px; padding-top: 15px; top: 5px; \">"; ?></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Downloads</a></li>
-                <li><a href="#">More</a></li>
-                <li><a href="#">Nice staff</a></li>
+                <li><?php echo "<img id=\"logo1\" src=\"".url::base()."media/images/PNP4.png\" style=\" height: 100px; width: 280px; border-radius: 20%; border-top-right-radius: 40%; border-top-left-radius: 40%; position: fixed; top: 0px; left: 12%;\">"; ?><li>
+                <li><?php echo "<img id=\"logo2\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" style=\"height: 60px; width: 150px; padding-top: 15px; top: 5px;\">"; ?></li>
+
+                <!-- BOTONES -->
+
+<?php $qsa  = pnp::addToUri(array('start' => $this->start,'end' => $this->end, 'view' => $this->view), False); ?>
+<?php require "../share/application/controllers/page.php"?>
+                
+		<?php echo "<li id=\"calendario\"><a href=\"#\" id=\"button1\">Especificar Fecha <img class=\"icon\" src=\"".url::base(TRUE)."media/images/calendar.png\"></a></li>";?>
+		<?php //echo "<li id=\"pdf1\"><a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf/basket/".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a></li>\n";?>
+                <?php //echo "<li><a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf/basket/".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a></li>";?>
+		<?php //echo "<li id=\"pdf2\"><a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf/page/".$this->page.$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a></li>"; ?>
+                <?php //echo "<li id=\"xml\"><a title=\"".Kohana::lang('common.title-xml-link')."\" href=\"".url::base(TRUE)."xml".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/xml.png\"></a></li>\n";?>
+                <?php echo "<li id=\"stats\"><a title=\"".Kohana::lang('common.title-statistics-link')."\" href=\"".url::base(TRUE)."graph?host=.pnp-internal&srv=runtime\">Estadisticas PNP <img class=\"icon\" src=\"".url::base()."media/images/stats.png\"></a></li>\n"; ?>
+                <?php echo "<li id=\"docs\"><a title=\"".Kohana::lang('common.title-docs-link')."\" href=\"".url::base(TRUE)."docs\">Documentación <img class=\"icon\" src=\"".url::base()."media/images/docs.png\"></a></li>\n";?>
+		<?php echo "<li id=\"colores\"><a title=\"Ver Esquemas de Color\" href=\"".url::base(TRUE)."color\">Paleta de Colores <img class=\"icon\" src=\"".url::base(TRUE)."media/images/color.png\"></a></li>"; ?>
+		<?php echo "<li id=\"us\"><a href=\"".url::base(TRUE)."docs/view/en_US/start\">Documentacion (EN) <img class=\"icon\" src=\"".url::base(TRUE)."media/images/en_US.png\"></a></li>"; ?>
+		<?php echo "<li id=\"de\"><a href=\"".url::base(TRUE)."docs/view/de_DE/start\">Documentacion (DE) <img class=\"icon\" src=\"".url::base(TRUE)."media/images/de_DE.png\"></a></li>"; ?>
+		<?php echo "<li id=\"graficas\"><a href=\"".url::base(TRUE)."graph\">Inicio <img class=\"icon\" src=\"".url::base(TRUE)."media/images/home.png\"></a></li>"; ?>		
+
+
+
               </ul>
             </nav>
-</section>  
+</section>
 </div>
+
 
 
 
@@ -303,30 +318,30 @@ nav ul li {
 
 
 nav ul li a {
-  display: block;
-  padding: 15px;
-  text-decoration: none;
-  color: #740505;
-  font-weight: 800;
-  text-transform: uppercase;
-  margin: 0 10px;
-}
-
-nav ul li a,
-nav ul li a:after,
-nav ul li a:before {
-  transition: all 0.5s;
-}
-nav ul li a:hover {
-  color: #555;
-}
-
-
-/* Circle */
-nav.circle ul li a {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #740505;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 10px;
+  }
+  
+  nav ul li a,
+  nav ul li a:after,
+  nav ul li a:before {
+    transition: all 0.5s;
+  }
+  nav ul li a:hover {
+    color: #555;
+  }
+  
+  
+  /* Circle */
+  nav.circle ul li a {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 /* By Dominik Biedebach @domobch */
 nav.circle ul li a:after {
@@ -351,76 +366,64 @@ nav.circle ul li a:hover:after {
 
 /* Keyframes */
 @-webkit-keyframes fill {
-  0% {
-    width: 0%;
-    height: 1px;
+    0% {
+      width: 0%;
+      height: 1px;
+    }
+    50% {
+      width: 100%;
+      height: 1px;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      background: #2ecc71;
+    }
   }
-  50% {
-    width: 100%;
-    height: 1px;
+  
+  /* Keyframes */
+  @-webkit-keyframes circle {
+    0% {
+      width: 1px;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      height: 1px;
+      z-index: -1;
+      background: #eee;
+      border-radius: 100%;
+
+    }
+    100% {
+      background: rgb(255, 255, 255);
+      height: 5000%;
+      width: 5000%;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 0;
+    }
   }
-  100% {
-    width: 100%;
-    height: 100%;
-    background: #2ecc71;
-  }
-}
-
-/* Keyframes */
-@-webkit-keyframes circle {
-  0% {
-    width: 1px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    height: 1px;
-    z-index: -1;
-    background: #eee;
-    border-radius: 100%;
-  }
-  100% {
-    background: rgb(255, 255, 255);
-    height: 5000%;
-    width: 5000%;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 0;
-  }
-}
-
-/* By Dominik Biedebach @domobch */
-
-
-
-
-
-
-
-
-</style>
-
-
-
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+  
+  /* By Dominik Biedebach @domobch */
+  
+  
+  </style>
+ 
 
 
 <!-- Fin Navbar -->
 
 
+
+
+
+<div class="centrado" style="position: absolute; top: 150px; left: 25%;">
 
 <?php if (!empty($graph)) {
      echo $graph;
@@ -440,14 +443,15 @@ nav.circle ul li a:hover:after {
 <?php if (!empty($docs)) {
      echo $docs;
 } ?>
-
-
-
 </div>
 
 
 
 
+
+
+
+</div>
 
 
 

@@ -1,6 +1,6 @@
 <?php 
-echo "<div class=\"ui-widget\">\n";
-echo "<div class=\"p2 ui-widget-header ui-corner-top\">\n";
+echo "<div class=\"wid_header\">\n";
+echo "<div class=\"p2 wid_header ui-corner-top\">\n";
 echo Kohana::lang('common.timerange-box-header')."\n"; 
 echo "</div>\n";
 echo "<div class=\"p4 ui-widget-content ui-corner-bottom\">\n";

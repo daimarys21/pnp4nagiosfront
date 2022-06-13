@@ -1,8 +1,8 @@
 <div class="pagebody">
 <table class="body">
 <tr valign="top"><td>
-<div class="left ui-widget">
- <div class="p4 ui-widget-header ui-corner-top">
+<div class="left wid_header">
+ <div class="p4 ui-corner-top">
  <?php echo Kohana::lang('common.color-header') ?>
  </div>
 <div class="p4 ui-widget-content ui-corner-bottom" style="width: 600px">

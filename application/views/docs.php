@@ -1,8 +1,8 @@
 <div class="pagebody">
 <table class="body">
 <tr valign="top"><td>
-<div class="left ui-widget">
-<div class="p2 ui-widget-header ui-corner-top">
+<div class="left wid_header">
+<div class="p2 wid_header ui-corner-top">
 <?php echo Kohana::lang('common.docs-header',PNP_VERSION) ?>
 </div>
 <div class="p4 ui-widget-content ui-corner-bottom" style="width: <?php echo $this->graph_width ?>px">
@@ -29,3 +29,20 @@ echo $logo_box;
 </div>
 </td></tr></table>
 </div>
+
+
+
+
+<script>
+
+  window.addEventListener('load', () => {
+          document.getElementById('calendario').style.display = 'none';
+          document.getElementById('xml').style.display = 'none';
+          document.getElementById('stats').style.display = 'none';
+          document.getElementById('iconbox').style.display = 'none';
+
+
+  })
+
+</script>
+

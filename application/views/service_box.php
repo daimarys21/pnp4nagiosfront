@@ -1,6 +1,6 @@
 <?php if (!empty($services) && $this->isAuthorizedFor('service_links') ) { ?>
-<div class="ui-widget">
- <div class="p2 ui-widget-header ui-corner-top">
+<div class="wid_header">
+ <div class="p2 wid_header ui-corner-top">
  <?php echo Kohana::lang('common.service-box-header') ?> 
  </div>
 

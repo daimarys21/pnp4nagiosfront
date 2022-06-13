@@ -48,8 +48,8 @@ jQuery.noConflict();
 </head>
 <body>
 <div class="pagebody">
-<div class="ui-widget">
-<div class="ui-widget-header ui-corner-top">
+<div class="wid_header">
+<div class="wid_header ui-corner-top">
 <?php echo Kohana::lang('common.zoom-header') ?>
 </div>
 <div class="p4 ui-widget-content ui-corner-bottom">

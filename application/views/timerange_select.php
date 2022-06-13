@@ -13,6 +13,20 @@ jQuery(function() {
 });
 </script>
 
+
+<script type="text/javascript">
+jQuery(function() {
+    jQuery("#button1").click(function() {
+        jQuery("#toggle-timerange").toggle("blind",500); 
+        return false;
+    });
+	jQuery("#dpstart").datetimepicker({ showOn: 'button', buttonImage: '<?php echo url::base()?>media/images/view-calendar.png', buttonImageOnly: true, constrainInput: false });
+	jQuery("#dpend").datetimepicker({ showOn: 'button', buttonImage: '<?php echo url::base()?>media/images/view-calendar.png', buttonImageOnly: true, constrainInput: false });
+});
+</script>
+
+
+
 <div id="toggle-timerange" class="ui-widget" style="Display: none;">
     <div class="p4 ui-widget-header ui-corner-top"><?php echo Kohana::lang('common.timerange-selector-title') ?></div>
     <div class="p4 ui-widget-content ui-corner-bottom">
