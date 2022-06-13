@@ -3,6 +3,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
+  <metacharset="UTF-8">
+  <metahttp-equiv="X-UA-Compatible"content="IE=edge">
+  <metaname="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0 ">
+
+
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="refresh" content="<?php echo $this->config->conf['refresh'] ?>" />
 <title><?php if (isset($this->title)) echo html::specialchars($this->title) ?></title>
@@ -218,40 +224,202 @@ jQuery(document).ready(function(){
 
 
 <!-- Navbar-->
-<div class="main-menu">
-    <div class="main-menu-form">
-      <div class="main-menu-btn"> <?php echo "<img class=\"logo\" src=\"".url::base()."media/images/back.png\" height=\"40px\" style=\"transform: scaleX(-1);\">" ?> </div>
-    </div>  
-    <div class="main-menu-content">
-      <!-- main logo -->
-      <div class="main-menu-logo">
-	<?php echo "<img class=\"logo\" src=\"".url::base()."media/images/PNP4.png\" height=\"100px\" width=\"300p\" style=\"border-radius:120%;\">" ?>
-	<br>
-	<br>
-        <h2 class="titulo">PNP4NAGIOS</h2>
-      </div>
-      <!-- navigation -->
-      <ul class="main-menu-nav">
+<div style="position: fixed; left: 0px; width: 100%; z-index: 2;">
+<section style="color: rgba(29, 29, 29, 0.5);">
+            <nav class="circle">
+              <ul>
+                <li><?php echo "<img id=\"logo1\" src=\"".url::base()."media/images/PNP4.png\" style=\" height: 100px; width: 280px; border-radius: 20%; border-top-right-radius: 40%; border-top-left-radius: 40%; padding-top: 7px; position: absolute; left: 15%; top: -4%;\">"; ?></li>
+                <li><?php echo "<img id=\"logo2\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" style=\"height: 60px; width: 150px; padding-top: 15px; top: 5px; \">"; ?></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Downloads</a></li>
+                <li><a href="#">More</a></li>
+                <li><a href="#">Nice staff</a></li>
+              </ul>
+            </nav>
+</section>  
+</div>
 
-	<?php //require('icon_box2.php'); ?>
 
-        <li><a href="#" class="orange"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        
-      </ul>
-  
-      <a href="#" class="main-menu-close"><i class="fa fa-close"></i>Cerrar menu</a>
-    </div>
-  </div>
-  
+
+<style type="text/css">
+
+
+
+/* TODO EL DOC*/
+
+
+* {
+
+margin: 0;
+padding: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+
+
+}
+
+
+/* NAVIGATION */
+nav {
+  height: 120px;
+  background: #e47b7b;
+  padding: 0.5%;
+  box-shadow: 0px 5px 0px #ecc1c1;
+}
+
+
+
+/* By Dominik Biedebach @domobch */
+nav ul {
+  list-style: none;
+  text-align: right;
+}
+
+
+#logo1 {
+  float:left;
+  margin-top: 10px;
+  margin-left: -200px;
+}
+
+#logo2 {
+  float:left;
+  margin-top: 50px;
+  margin-left: -10%;
+}
+
+
+
+
+nav ul li {
+  display: inline-block;
+  padding-bottom: 1%;
+  margin-top: -50px;
+}
+
+
+
+
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: #740505;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all 0.5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+
+/* Circle */
+nav.circle ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+/* By Dominik Biedebach @domobch */
+nav.circle ul li a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: ".";
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+nav.circle ul li a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
+}
+
+
+/* Keyframes */
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #2ecc71;
+  }
+}
+
+/* Keyframes */
+@-webkit-keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #eee;
+    border-radius: 100%;
+  }
+  100% {
+    background: rgb(255, 255, 255);
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
+
+/* By Dominik Biedebach @domobch */
+
+
+
+
+
+
+
+
+</style>
+
+
+
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 
 <!-- Fin Navbar -->
 
-
-
-
-<!-- Logo PDVSA -->
-
-<?php echo "<img class=\"logo\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" height=\"70px\" width=\"300p\">" ?>
 
 
 <?php if (!empty($graph)) {
@@ -273,7 +441,15 @@ jQuery(document).ready(function(){
      echo $docs;
 } ?>
 
+
+
 </div>
+
+
+
+
+
+
 
 <!-- Preloader JS -->
 <script type="text/javascript">
@@ -284,68 +460,6 @@ jQuery(document).ready(function(){
 
     })
 </script>
-
-
-<!-- Nav bar -->
-
-
-<script type="text/javascript"></script>
-<script>
-var MainMenu = (function() {
-    var MainMenu = function(config) {
-        config = config || {};
-        this.toggleBtn = $(config.toggleBtn);
-        this.menu = $(config.menu);
-        this.close = $(config.close);
-
-        this.init();
-        config = null;
-    };
-    // public interface
-    MainMenu.prototype = {
-        constructor: MainMenu,
-        init: function() {
-            this.eventManager();
-        },
-        eventManager: function() {
-            this.toggleBtn.on('click.openMenu', onButtonClickHandler.bind(this));
-            this.close.on('click.closeMenu', onCloseClickHandler.bind(this));
-        }
-    };
-    // private interface
-    function onButtonClickHandler(menu, evt) {
-        if (!this.menu.hasClass('open')) {
-            this.menu.addClass('open');
-        };
-
-    }
-
-    function onCloseClickHandler(evt) {
-        this.menu.removeClass('open')
-    }
-
-    function onDocumentClickHandler(evt) {
-        var $target = $(evt.target);
-
-        if (!$target.closest(this.menuForm).length && !$target.closest(this.menuContent).length && this.menu.hasClass('open')) {
-            this.menu.removeClass('open')
-        }
-    }
-
-    return MainMenu;
-})();
-
-
-$(document).ready(function() {
-    var mainMenu = new MainMenu({
-        menu: '.main-menu',
-        toggleBtn: '.main-menu-btn',
-        close: '.main-menu-close'
-    });
-});
-</script>
-
-
 
 
 
