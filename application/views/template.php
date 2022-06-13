@@ -14,6 +14,7 @@
 <?php echo html::script('media/js/jquery.imgareaselect.min.js')?>
 <?php echo html::script('media/js/jquery-ui.min.js')?>
 <?php echo html::script('media/js/jquery-ui-timepicker-addon.js')?>
+<?php //echo html::script('media/js/jquery2.min.js')?>
 <script type="text/javascript">
 jQuery.noConflict();
 jQuery(window).load(
@@ -219,7 +220,7 @@ jQuery(document).ready(function(){
 <!-- Navbar-->
 <div class="main-menu">
     <div class="main-menu-form">
-      <div class="main-menu-btn"></div>
+      <div class="main-menu-btn"> <?php echo "<img class=\"logo\" src=\"".url::base()."media/images/back.png\" height=\"40px\" style=\"transform: scaleX(-1);\">" ?> </div>
     </div>  
     <div class="main-menu-content">
       <!-- main logo -->
@@ -231,11 +232,11 @@ jQuery(document).ready(function(){
       </div>
       <!-- navigation -->
       <ul class="main-menu-nav">
+
+	<?php //require('icon_box2.php'); ?>
+
         <li><a href="#" class="orange"><i class="fa fa-home fa-fw"></i>Home</a></li>
-        <li><a href="#" class="yellow"><i class="fa fa-book fa-fw front"></i>Library</a></li>
-        <li><a href="#" class="green"><i class="fa fa-folder fa-fw"></i>Forum</a></li>
-        <li><a href="#" class="purple"><i class="fa fa-envelope fa-fw"></i>Contact</a></li>
-        <li><a href="#" class="red"><i class="fa fa-users fa-fw"></i>About</a></li>
+        
       </ul>
   
       <a href="#" class="main-menu-close"><i class="fa fa-close"></i>Cerrar menu</a>
@@ -247,6 +248,10 @@ jQuery(document).ready(function(){
 
 
 
+
+<!-- Logo PDVSA -->
+
+<?php echo "<img class=\"logo\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" height=\"70px\" width=\"300p\">" ?>
 
 
 <?php if (!empty($graph)) {
@@ -284,7 +289,7 @@ jQuery(document).ready(function(){
 <!-- Nav bar -->
 
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript"></script>
 <script>
 var MainMenu = (function() {
     var MainMenu = function(config) {

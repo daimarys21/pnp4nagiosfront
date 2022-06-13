@@ -7,7 +7,7 @@
 <?php
 $qsa  = pnp::addToUri(array('start' => $this->start,'end' => $this->end, 'view' => $this->view), False);
 if($this->config->conf['use_calendar']){
-	echo "<a title=\"".Kohana::lang('common.title-calendar-link')."\" href=\"#\" id=\"button\"><img class=\"icon\" src=\"".url::base()."media/images/calendar.png\"></a>"; 
+	echo "<a title=\"".Kohana::lang('common.title-calendar-link')."\" href=\"#\" id=\"button\"><img class=\"icon\" src=\"".url::base()."media/images/calendar.png\"></a>";  
 }
 if($this->config->conf['use_fpdf'] == 1 && ( $position == "graph" || $position == "special") ){
 	echo "<a title=\"".Kohana::lang('common.title-pdf-link')."\" href=\"".url::base(TRUE)."pdf".$qsa."\"><img class=\"icon\" src=\"".url::base()."media/images/pdf.png\"></a>\n";
