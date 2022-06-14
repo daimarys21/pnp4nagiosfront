@@ -36,3 +36,14 @@
     </div>
 	</td></tr></table>
 </div>
+
+
+<script>
+
+  window.addEventListener('load', () => {
+          document.getElementById('estadisticas').style.display = 'none';
+          document.getElementById('calenadrio').style.display = 'none';
+  })
+
+</script>
+
