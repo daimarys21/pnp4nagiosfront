@@ -2,7 +2,7 @@
 <table class="body">
 <tr valign="top"><td>
 <div class="left wid_header">
-<div class="p2 wid_header ui-corner-top">
+<div class="p2 ui-corner-top">
 <?php echo Kohana::lang('common.docs-header',PNP_VERSION) ?>
 </div>
 <div class="p4 ui-widget-content ui-corner-bottom" style="width: <?php echo $this->graph_width ?>px">

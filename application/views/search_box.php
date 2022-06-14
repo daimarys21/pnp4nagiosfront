@@ -9,7 +9,7 @@ jQuery(function() {
 });
 </script>
 
-<div class="wid_header">
+<div>
  <div class="p2 wid_header ui-corner-top">
  <?php echo Kohana::lang('common.search-box-header') ?>
  </div>
