@@ -230,12 +230,17 @@ jQuery(document).ready(function(){
               <ul>
                 <li><?php echo "<img id=\"logo1\" src=\"".url::base()."media/images/PNP4.png\" style=\" height: 100px; width: 280px; border-radius: 20%; border-top-right-radius: 40%; border-top-left-radius: 40%; padding-top: 7px; position: absolute; left: 15%; top: -4%;\">"; ?></li>
                 <li><?php echo "<img id=\"logo2\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" style=\"height: 60px; width: 150px; padding-top: 15px; top: 5px; \">"; ?></li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Downloads</a></li>
-                <li><a href="#">More</a></li>
-                <li><a href="#">Nice staff</a></li>
-              </ul>
+                
+<?php $qsa  = pnp::addToUri(array('start' => $this->start,'end' => $this->end, 'view' => $this->view), False); ?>
+
+		<?php echo "<li id=\"inicio\"><a title=\"Inicio\" href=\"".url::base(TRUE)."graph\">Inicio <img class=\"icon\" src=\"".url::base()."media/images/home.png\"></a></li>";?>
+                <?php echo "<li id=\"colores\"><a title=\"Esquemas de Colores\" href=\"".url::base(TRUE)."color\">Esquema de Colores <img class=\"icon\" src=\"".url::base()."media/images/color.png\"></a></li>";?>
+		<?php echo "<li id=\"calenadrio\"><a title=\"".Kohana::lang('common.title-calendar-link')."\" href=\"#\" id=\"button\">Establecer Fecha<img class=\"icon\" src=\"".url::base()."media/images/calendar.png\"></a></li>";?>
+                <?php echo "<li id=\"estadisticas\"><a title=\"".Kohana::lang('common.title-statistics-link')."\" href=\"".url::base(TRUE)."graph?host=.pnp-internal&srv=runtime\">Estadisticas Internas <img class=\"icon\" src=\"".url::base()."media/images/stats.png\"></a></li>"; ?>
+                <?php echo "<li id=\"documentacion\"><a title=\"".Kohana::lang('common.title-docs-link')."\" href=\"".url::base(TRUE)."docs\">Documentación <img class=\"icon\" src=\"".url::base()."media/images/docs.png\"></a></li>";?>
+                <?php echo "<li id=\"us\"><a title=\"Documentacion (DE)\" href=\"".url::base(TRUE)."docs/view/de_DE/start.html\">Documentación (DE)<img class=\"icon\" src=\"".url::base()."media/images/de_DE.png\"></a></li>";?>
+             	<?php echo "<li id=\"de\"><a title=\"Documentacion (US)\" href=\"".url::base(TRUE)."docs/view/en_US/start.html\">Documentación (US)<img class=\"icon\" src=\"".url::base()."media/images/en_US.png\"></a></li>";?>
+		</ul>
             </nav>
 </section>  
 </div>
@@ -421,7 +426,7 @@ nav.circle ul li a:hover:after {
 <!-- Fin Navbar -->
 
 
-
+<div id="centrame">
 <?php if (!empty($graph)) {
      echo $graph;
 } ?>
@@ -440,7 +445,7 @@ nav.circle ul li a:hover:after {
 <?php if (!empty($docs)) {
      echo $docs;
 } ?>
-
+</div>
 
 
 </div>

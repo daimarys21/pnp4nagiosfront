@@ -54,3 +54,17 @@
     </div>
 	</td></tr></table>
 </div>
+
+
+
+
+<script>
+
+  window.addEventListener('load', () => {
+          document.getElementById('us').style.display = 'none';
+          document.getElementById('de').style.display = 'none';
+          document.getElementById('colores').style.display = 'none';
+          document.getElementById('inicio').style.display = 'none';
+  })
+
+</script>
