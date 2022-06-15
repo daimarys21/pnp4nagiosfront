@@ -446,25 +446,26 @@ nav.circle ul li a:hover:after {
 /* PRELOADER */
 
 
+
 @font-face {
-  font-family: Raleway-Bold;
-  src: url('/pnp4nagios/share/media/fonts/Raleway-Bold.ttf');
+  font-family: 'Raleway-Bold';
+  src: url('/pnp4nagios/media/fonts/Raleway-Bold.ttf');
 }
 
 @font-face {
   font-family: Raleway-ExtraLight;
-  src: url('/pnp4nagios/share/media/fonts/Raleway-ExtraLight.ttf');
+  src: url('/pnp4nagios/media/fonts/Raleway-ExtraLight.ttf');
 }
 
 
 @font-face {
-  font-family: Raleway-Medium;
-  src: url('/pnp4nagios/share/media/fonts/Raleway-Medium.ttf');
+  font-family: 'Raleway-Medium';
+  src: url('/pnp4nagios/media/fonts/Raleway-Medium.ttf');
 }
 
 @font-face {
-  font-family: Raleway-Regular;
-  src: url('/pnp4nagios/share/media/fonts/Raleway-Regular.ttf');
+  font-family: 'Raleway-Regular';
+  src: url('/pnp4nagios/media/fonts/Raleway-Regular.ttf');
 }
 
 
@@ -585,11 +586,13 @@ animation-delay: .8s;
  }
 
  .footer_text {
-   font-family: Raleway-Regular;
+   font-family: Raleway-Bold;
    font-size: 14px;
    position: absolute;
    right: 40%;
    bottom: -10px;
+   text-decoration: none;
+   opacity: 50%;
  }
 
  .footer_1 {
