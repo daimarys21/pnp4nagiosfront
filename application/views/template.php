@@ -617,6 +617,7 @@ animation-delay: .8s;
 
         document.getElementById('contenido').style.display = 'block';
         document.getElementById('preloader_1').style.display = 'none';
+	document.getElementById('preloader_text').style.display = 'none';   
 
     })
 </script>
