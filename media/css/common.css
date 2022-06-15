@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'Raleway-Bold';
+  src: url('/pnp4nagios/media/fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+  font-family: Raleway-ExtraLight;
+  src: url('/pnp4nagios/media/fonts/Raleway-ExtraLight.ttf');
+}
+
+
+@font-face {
+  font-family: 'Raleway-Medium';
+  src: url('/pnp4nagios/media/fonts/Raleway-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Raleway-Regular';
+  src: url('/pnp4nagios/media/fonts/Raleway-Regular.ttf');
+}
+
+
+
+
 body {
 	font-family: sans-serif;
 	font-size: 16px;
