@@ -275,6 +275,7 @@ nav {
   padding: 0.5%;
   box-shadow: 0px 5px 0px #455261;
   opacity: 90%;
+  font-family: Raleway-Bold;
 }
 
 
@@ -342,6 +343,7 @@ nav ul li {
 nav ul li a {
   display: block;
   padding: 15px;
+  padding-left: 5px;
   text-decoration: none;
   color: #ffffff;
   font-weight: 800;
@@ -669,9 +671,16 @@ animation-delay: .8s;
 	
 	<!-- FOOTER -->
 
+
+<?php $ano = new DateTime();
+$ano->setTimezone(new DateTimeZone('UTC'));
+$DateandTime = $ano->format("y");
+
+?>
+
 <div class="footer_1">
-    <img class="footer_logo gob" src=" <?php echo url::base();?>/media/images/PNP42.png">   
-    <h4 class="footer_text">© 2022 - PDVSA AIT FALCÓN - Derechos Reservados </h4>
+    <img class="gob" src=" <?php echo url::base();?>/media/images/PNP42.png">
+    <h4 class="footer_text">© 20<?php echo $DateandTime; ?> - PDVSA AIT FALCÓN - Derechos Reservados </h4>
     <img class="footer_logo ait" src=" <?php echo url::base(); ?>/media/images/somosAIT.png">
 </div>
 
