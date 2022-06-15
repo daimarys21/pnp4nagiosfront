@@ -272,10 +272,12 @@ box-sizing: border-box;
 /* NAVIGATION */
 nav {
   height: 120px;
-  background: #e47b7b;
+  background: #414956;
   padding: 0.5%;
-  box-shadow: 0px 5px 0px #ecc1c1;
+  box-shadow: 0px 5px 0px #455261;
+  opacity: 90%;
 }
+
 
 	
 @keyframes animated_nav {
@@ -331,7 +333,8 @@ nav ul {
 nav ul li {
   display: inline-block;
   padding-bottom: 1%;
-  margin-top: -50px;
+  margin-top: 20px;
+  color: #ffffff;
 }
 
 
@@ -341,11 +344,12 @@ nav ul li a {
   display: block;
   padding: 15px;
   text-decoration: none;
-  color: #740505;
+  color: #ffffff;
   font-weight: 800;
   text-transform: uppercase;
   margin: 0 10px;
 }
+
 
 nav ul li a,
 nav ul li a:after,
@@ -353,11 +357,92 @@ nav ul li a:before {
   transition: all 0.5s;
 }
 nav ul li a:hover {
-  color: #555;
+  color: #333333;
+}
+
+
+/* Circle */
+nav.circle ul li a {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: #ffffff;
+}
+
+nav.circle ul li a:hover {
+  color: #333333;
+}
+
+/* By Dominik Biedebach @domobch */
+nav.circle ul li a:after {
+  display: block;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: ".";
+  color: transparent;
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background: transparent;
+}
+
+nav.circle ul li a:hover:after {
+  -webkit-animation: circle 1.5s ease-in forwards;
 }
 
 	
+/* Keyframes */
+@-webkit-keyframes fill {
+  0% {
+    width: 0%;
+    height: 1px;
+  }
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+  100% {
+    width: 100%;
+    height: 100%;
+    background: #2ecc71;
+  }
+}
+
+/* Keyframes */
+@-webkit-keyframes circle {
+  0% {
+    width: 1px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    height: 1px;
+    z-index: -1;
+    background: #c7ddff;
+    border-radius: 100%;
+  }
+  100% {
+    background: rgb(255, 255, 255);
+    height: 5000%;
+    width: 5000%;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0;
+  }
+}
 	
+	
+	
+
 	
 /* PRELOADER */
 
