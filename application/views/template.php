@@ -449,24 +449,25 @@ nav.circle ul li a:hover:after {
 
 @font-face {
   font-family: Raleway-Bold;
-  src: url('Raleway-Bold.ttf');
+  src: url('/pnp4nagios/share/media/fonts/Raleway-Bold.ttf');
 }
 
 @font-face {
   font-family: Raleway-ExtraLight;
-  src: url('Raleway-ExtraLight.ttf');
+  src: url('/pnp4nagios/share/media/fonts/Raleway-ExtraLight.ttf');
 }
 
 
 @font-face {
   font-family: Raleway-Medium;
-  src: url('Raleway-Medium.ttf');
+  src: url('/pnp4nagios/share/media/fonts/Raleway-Medium.ttf');
 }
 
 @font-face {
   font-family: Raleway-Regular;
-  src: url('Raleway-Regular.ttf');
+  src: url('/pnp4nagios/share/media/fonts/Raleway-Regular.ttf');
 }
+
 
 
 .preloader_text {
