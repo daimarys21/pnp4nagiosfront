@@ -563,23 +563,79 @@ animation-delay: .8s;
 
 
 
+/* FOOTER */
+
+ .footer_logo {
+   width: 90px;
+   height: 30px;
+ }
+
+ .ait {
+   position: absolute;
+   right: 5%;
+   bottom: 5px;
+ }
+
+ .gob {
+   position: absolute;
+   left: 5%;
+   bottom: -20px;
+   height: 90px;
+   width: 130px;
+ }
+
+ .footer_text {
+   font-family: Raleway-Regular;
+   font-size: 14px;
+   position: absolute;
+   right: 40%;
+   bottom: -10px;
+ }
+
+ .footer_1 {
+   width: 100%;
+   height: 40px;
+   background-color: #d1d1d1;
+   position: fixed;
+   bottom: -50px;
+   animation-name: animated_footer;
+   animation-duration: 1s;
+   animation-timing-function: ease-in;
+   animation-fill-mode: both;
+ }
+
+
+@keyframes animated_footer {
+  0% {
+    opacity: 0%;
+  }
+  25% {
+    opacity: 25%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+	
+ 100% {
+    opacity: 100%;
+    position: fixed;
+    bottom: 0px;
+  }
+}
+
+
+
 
 
 
 
 
 </style>
-
-
-
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
