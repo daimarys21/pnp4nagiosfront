@@ -231,8 +231,7 @@ jQuery(document).ready(function(){
 <section style="color: rgba(29, 29, 29, 0.5);">
             <nav class="circle">
               <ul>
-                <li><?php echo "<img id=\"logo1\" src=\"".url::base()."media/images/PNP4.png\" style=\" height: 100px; width: 280px; border-radius: 20%; border-top-right-radius: 40%; border-top-left-radius: 40%; padding-top: 7px; position: absolute; left: 15%; top: -4%;\">"; ?></li>
-                <li><?php echo "<img id=\"logo2\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" style=\"height: 60px; width: 150px; padding-top: 15px; top: 5px; \">"; ?></li>
+                 <?php echo "<img id=\"logo2\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" style=\"height: 40%; width: 50%; top: 5px; left: -15%; \">"; ?>
                 
 <?php $qsa  = pnp::addToUri(array('start' => $this->start,'end' => $this->end, 'view' => $this->view), False); ?>
 
@@ -612,6 +611,7 @@ animation-delay: .8s;
 	<!-- FOOTER -->
 
 <div class="footer_1">
+    <img class="footer_logo gob" src=" <?php echo url::base();?>/media/images/PNP42.png">   
     <h4 class="footer_text">© 2022 - PDVSA AIT FALCÓN - Derechos Reservados </h4>
     <img class="footer_logo ait" src=" <?php echo url::base(); ?>/media/images/somosAIT.png">
 </div>
