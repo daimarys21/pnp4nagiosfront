@@ -240,7 +240,7 @@ jQuery(document).ready(function(){
 		<?php echo "<li id=\"calenadrio\"><a title=\"".Kohana::lang('common.title-calendar-link')."\" href=\"#\" id=\"button\">Establecer Fecha<img class=\"icon\" src=\"".url::base()."media/images/calendar.png\"></a></li>";?>
                 <?php echo "<li id=\"estadisticas\"><a title=\"".Kohana::lang('common.title-statistics-link')."\" href=\"".url::base(TRUE)."graph?host=.pnp-internal&srv=runtime\">Estadisticas Internas <img class=\"icon\" src=\"".url::base()."media/images/stats.png\"></a></li>"; ?>
                 <?php echo "<li id=\"documentacion\"><a title=\"".Kohana::lang('common.title-docs-link')."\" href=\"".url::base(TRUE)."docs\">Documentación <img class=\"icon\" src=\"".url::base()."media/images/docs.png\"></a></li>";?>
-                <?php echo "<li id=\"de\"><a title=\"Documentacion (DE)\" href=\"/pnp4nagios/docs/view/de_DE/start\">Documentación (DE)<img class=\"icon\" src=\"".url::base()."media/images/de_DE.png\"></a></li>";?>
+               <?php echo "<li id=\"de\"><a title=\"Documentacion (DE)\" href=\"/pnp4nagios/docs/view/de_DE/\">Documentación (DE)<img class=\"icon\" src=\"/pnp4nagios/media/images/de_DE.png\"></a></li>";?>
 		</ul>
             </nav>
 </section>  
