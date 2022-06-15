@@ -208,14 +208,17 @@ jQuery(document).ready(function(){
 <body>
 
 <!-- Preloader -->
+<div class="preloader">
+          <div id="preloader_1">
+            <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
 
-<div id="preloader">
-<div class="preloader"></div>
-<br>
-<br>
-<div class="texto1">Cargando...</div> 
-</div>
-
+        </div>
+        <a class="preloader_text animated flash">Cargando...</a>
 
 <!-- Contenido -->
 
@@ -224,7 +227,7 @@ jQuery(document).ready(function(){
 
 
 <!-- Navbar-->
-<div style="position: fixed; left: 0px; width: 100%; z-index: 2;">
+<div  style="position: absolute; top: -150px; left: 0px; width: 100%; z-index: 2;   animation-name: animated_nav; animation-duration: 1s; animation-timing-function: ease; animation-fill-mode: both;">
 <section style="color: rgba(29, 29, 29, 0.5);">
             <nav class="circle">
               <ul>
@@ -274,9 +277,36 @@ nav {
   box-shadow: 0px 5px 0px #ecc1c1;
 }
 
+	
+@keyframes animated_nav {
+  0% {
+    opacity: 0%;
+  }
+  25% {
+    opacity: 25%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    opacity: 100%;
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    z-index: 2;
+    top: 0px;
+  }
+}
 
 
-/* By Dominik Biedebach @domobch */
+
+
 nav ul {
   list-style: none;
   text-align: right;
@@ -326,80 +356,120 @@ nav ul li a:hover {
   color: #555;
 }
 
+	
+	
+	
+/* PRELOADER */
 
-/* Circle */
-nav.circle ul li a {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+
+@font-face {
+  font-family: Raleway-Bold;
+  src: url('Raleway-Bold.ttf');
 }
-/* By Dominik Biedebach @domobch */
-nav.circle ul li a:after {
-  display: block;
+
+@font-face {
+  font-family: Raleway-ExtraLight;
+  src: url('Raleway-ExtraLight.ttf');
+}
+
+
+@font-face {
+  font-family: Raleway-Medium;
+  src: url('Raleway-Medium.ttf');
+}
+
+@font-face {
+  font-family: Raleway-Regular;
+  src: url('Raleway-Regular.ttf');
+}
+
+
+.preloader_text {
+  color: rgb(78, 78, 78);
   position: absolute;
-  margin: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  content: ".";
-  color: transparent;
-  width: 1px;
-  height: 1px;
-  border-radius: 50%;
-  background: transparent;
-}
-nav.circle ul li a:hover:after {
-  -webkit-animation: circle 1.5s ease-in forwards;
+  margin:auto;
+  margin-top: 8%;
+  margin-left: 45%;
+  font-family: Raleway-ExtraLight;
+  font-size: 40px;
 }
 
 
-/* Keyframes */
-@-webkit-keyframes fill {
-  0% {
-    width: 0%;
-    height: 1px;
-  }
-  50% {
-    width: 100%;
-    height: 1px;
-  }
-  100% {
-    width: 100%;
-    height: 100%;
-    background: #2ecc71;
-  }
+.preloader {
+display: flex;
+justify-content: center;
+margin-top: 15%;
+margin-right: 10%;
+opacity: 50%;
 }
 
-/* Keyframes */
-@-webkit-keyframes circle {
-  0% {
-    width: 1px;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
-    height: 1px;
-    z-index: -1;
-    background: #eee;
-    border-radius: 100%;
-  }
-  100% {
-    background: rgb(255, 255, 255);
-    height: 5000%;
-    width: 5000%;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    border-radius: 0;
-  }
+#preloader_1{
+  position:relative;
+}
+#preloader_1 span{
+  display:block;
+  bottom:0px;
+  width: 27px;
+  height: 15px;
+  background:#203064;
+  position:absolute;
+  animation: preloader_1 1.5s  infinite ease-in-out;
 }
 
-/* By Dominik Biedebach @domobch */
+#preloader_1 span:nth-child(2){
+left:33px;
+animation-delay: .2s;
+
+}
+#preloader_1 span:nth-child(3){
+left:66px;
+animation-delay: .4s;
+}
+#preloader_1 span:nth-child(4){
+left:99px;
+animation-delay: .6s;
+}
+#preloader_1 span:nth-child(5){
+left:132px;
+animation-delay: .8s;
+}
+@keyframes preloader_1 {
+  0% {height:15px;transform:translateY(0px);background:#3c63ac;}
+  25% {height:120px;transform:translateY(60px);background:#3accc5;}
+  50% {height:15px;transform:translateY(0px);background:#3c63ac;}
+  100% {height:15px;transform:translateY(0px);background:#3c63ac;}
+}
+
+
+
+
+.animated {
+  -webkit-animation-duration: 12s;
+  animation-duration: 6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: ease;
+  animation-iteration-count: infinite;
+ }
+ @-webkit-keyframes flash {
+  0%, 50%, 100% {
+  opacity: 1;
+  }
+ 25%, 75% {
+  opacity: 0;
+  }
+ }
+ @keyframes flash {
+  0%, 50%, 100% {
+  opacity: 1;
+  }
+ 25%, 75% {
+  opacity: 0;
+  }
+ }
+ .flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+ }
 
 
 
