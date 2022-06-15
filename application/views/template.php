@@ -480,6 +480,11 @@ nav.circle ul li a:hover:after {
   font-size: 40px;
 }
 
+	
+.preloader_text:hover {
+  color: rgb(78, 78, 78);
+}
+
 
 .preloader {
 display: flex;
@@ -603,6 +608,17 @@ animation-delay: .8s;
 } ?>
 </div>
 
+	
+	<!-- FOOTER -->
+
+<div class="footer_1">
+    <h4 class="footer_text">© 2022 - PDVSA AIT FALCÓN - Derechos Reservados </h4>
+    <img class="footer_logo ait" src=" <?php echo url::base(); ?>/media/images/somosAIT.png">
+</div>
+
+
+	
+	
 
 </div>
 
