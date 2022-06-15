@@ -531,7 +531,7 @@ animation-delay: .8s;
     window.addEventListener('load', () => {
 
         document.getElementById('contenido').style.display = 'block';
-        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('preloader_1').style.display = 'none';
 
     })
 </script>
