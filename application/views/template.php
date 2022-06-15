@@ -209,12 +209,18 @@ jQuery(document).ready(function(){
 
 <!-- Preloader -->
 
-<div id="preloader">
-<div class="preloader"></div>
-<br>
-<br>
-<div class="texto1">Cargando...</div> 
+<div class="preloader">
+<div id="preloader_1">
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
 </div>
+
+</div>
+<a id="preloader_text" class="preloader_text animated flash">Cargando...</a>
+
 
 
 <!-- Contenido -->
@@ -224,12 +230,11 @@ jQuery(document).ready(function(){
 
 
 <!-- Navbar-->
-<div style="position: fixed; left: 0px; width: 100%; z-index: 2;">
+<div style="position: absolute; top: -150px; left: 0px; width: 100%; z-index: 2;   animation-name: animated_nav; animation-duration: 1s; animation-timing-function: ease; animation-fill-mode: both;">
 <section style="color: rgba(29, 29, 29, 0.5);">
             <nav class="circle">
               <ul>
-                <li><?php echo "<img id=\"logo1\" src=\"".url::base()."media/images/PNP4.png\" style=\" height: 100px; width: 280px; border-radius: 20%; border-top-right-radius: 40%; border-top-left-radius: 40%; padding-top: 7px; position: absolute; left: 15%; top: -4%;\">"; ?></li>
-                <li><?php echo "<img id=\"logo2\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" style=\"height: 60px; width: 150px; padding-top: 15px; top: 5px; \">"; ?></li>
+                <?php echo "<img id=\"logo2\" src=\"".url::base()."media/images/Logo_PDVSA.svg\" style=\"height: 40%; width: 50%; top: 5px; left: -15%; \">"; ?>
                 
 <?php $qsa  = pnp::addToUri(array('start' => $this->start,'end' => $this->end, 'view' => $this->view), False); ?>
 
@@ -238,8 +243,7 @@ jQuery(document).ready(function(){
 		<?php echo "<li id=\"calenadrio\"><a title=\"".Kohana::lang('common.title-calendar-link')."\" href=\"#\" id=\"button\">Establecer Fecha<img class=\"icon\" src=\"".url::base()."media/images/calendar.png\"></a></li>";?>
                 <?php echo "<li id=\"estadisticas\"><a title=\"".Kohana::lang('common.title-statistics-link')."\" href=\"".url::base(TRUE)."graph?host=.pnp-internal&srv=runtime\">Estadisticas Internas <img class=\"icon\" src=\"".url::base()."media/images/stats.png\"></a></li>"; ?>
                 <?php echo "<li id=\"documentacion\"><a title=\"".Kohana::lang('common.title-docs-link')."\" href=\"".url::base(TRUE)."docs\">Documentación <img class=\"icon\" src=\"".url::base()."media/images/docs.png\"></a></li>";?>
-                <?php echo "<li id=\"de\"><a title=\"Documentacion (DE)\" href=\"/pnp4nagios/docs/view/de_DE/start\">Documentación (DE)<img class=\"icon\" src=\"".url::base()."media/images/de_DE.png\"></a></li>";?>
-             	<?php echo "<li id=\"us\"><a title=\"Documentacion (US)\" href=\"/pnp4nagios/docs/view/en_US/start.html\">Documentación (US)<img class=\"icon\" src=\"".url::base()."media/images/en_US.png\"></a></li>";?>
+             	<?php echo "<li id=\"de\"><a title=\"Documentacion (DE)\" href=\"/pnp4nagios/docs/view/de_DE/\">Documentación (DE)<img class=\"icon\" src=\"/pnp4nagios/media/images/de_DE.png\"></a></li>";?>
 		</ul>
             </nav>
 </section>  
@@ -269,11 +273,39 @@ box-sizing: border-box;
 /* NAVIGATION */
 nav {
   height: 120px;
-  background: #e47b7b;
+  background: #414956;
   padding: 0.5%;
-  box-shadow: 0px 5px 0px #ecc1c1;
+  box-shadow: 0px 5px 0px #455261;
+  opacity: 90%;
+  font-family: Raleway-Bold;
 }
 
+
+@keyframes animated_nav {
+  0% {
+    opacity: 0%;
+  }
+  25% {
+    opacity: 25%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    opacity: 100%;
+    position: fixed; 
+    left: 0px; 
+    width: 100%; 
+    z-index: 2;
+    top: 0px;
+  }
+}
 
 
 /* By Dominik Biedebach @domobch */
@@ -290,9 +322,9 @@ nav ul {
 }
 
 #logo2 {
-  float:left;
-  margin-top: 50px;
-  margin-left: -10%;
+  position: absolute;
+  margin-top: 40px;
+  left: 20%;
 }
 
 
@@ -301,7 +333,8 @@ nav ul {
 nav ul li {
   display: inline-block;
   padding-bottom: 1%;
-  margin-top: -50px;
+  margin-top: 20px;
+  color: #ffffff;
 }
 
 
@@ -311,10 +344,11 @@ nav ul li a {
   display: block;
   padding: 15px;
   text-decoration: none;
-  color: #740505;
+  color: #ffffff;
   font-weight: 800;
   text-transform: uppercase;
   margin: 0 10px;
+  padding-left: 5px;
 }
 
 nav ul li a,
@@ -323,8 +357,9 @@ nav ul li a:before {
   transition: all 0.5s;
 }
 nav ul li a:hover {
-  color: #555;
+  color: #333333;
 }
+
 
 
 /* Circle */
@@ -332,7 +367,13 @@ nav.circle ul li a {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  color: #ffffff;
 }
+
+nav.circle ul li a:hover {
+  color: #333333;
+}
+
 /* By Dominik Biedebach @domobch */
 nav.circle ul li a:after {
   display: block;
@@ -350,7 +391,7 @@ nav.circle ul li a:after {
   background: transparent;
 }
 nav.circle ul li a:hover:after {
-  -webkit-animation: circle 1.5s ease-in forwards;
+  -webkit-animation: circle 1.5s ease-in forwards; 
 }
 
 
@@ -382,7 +423,7 @@ nav.circle ul li a:hover:after {
     margin: auto;
     height: 1px;
     z-index: -1;
-    background: #eee;
+    background: #c7ddff;
     border-radius: 100%;
   }
   100% {
@@ -399,7 +440,196 @@ nav.circle ul li a:hover:after {
   }
 }
 
-/* By Dominik Biedebach @domobch */
+
+
+
+
+
+
+/* PRELOADER */
+
+
+@font-face {
+  font-family: 'Raleway-Bold';
+  src: url('/pnp4nagios/media/fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+  font-family: Raleway-ExtraLight;
+  src: url('/pnp4nagios/media/fonts/Raleway-ExtraLight.ttf');
+}
+
+
+@font-face {
+  font-family: 'Raleway-Medium';
+  src: url('/pnp4nagios/media/fonts/Raleway-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Raleway-Regular';
+  src: url('/pnp4nagios/media/fonts/Raleway-Regular.ttf');
+}
+
+
+.preloader_text {
+  color: rgb(78, 78, 78);
+  position: absolute;
+  margin:auto;
+  margin-top: 8%;
+  margin-left: 45%;
+  font-family: Raleway-ExtraLight;
+  font-size: 40px;
+}
+
+
+.preloader_text:hover {
+  color: rgb(78, 78, 78);
+}
+
+.preloader {
+display: flex;
+justify-content: center;
+margin-top: 15%;
+margin-right: 10%;
+opacity: 50%;
+}
+
+#preloader_1{
+  position:relative;
+}
+#preloader_1 span{
+  display:block;
+  bottom:0px;
+  width: 27px;
+  height: 15px;
+  background:#203064;
+  position:absolute;
+  animation: preloader_1 1.5s  infinite ease-in-out;
+}
+
+#preloader_1 span:nth-child(2){
+left:33px;
+animation-delay: .2s;
+
+}
+#preloader_1 span:nth-child(3){
+left:66px;
+animation-delay: .4s;
+}
+#preloader_1 span:nth-child(4){
+left:99px;
+animation-delay: .6s;
+}
+#preloader_1 span:nth-child(5){
+left:132px;
+animation-delay: .8s;
+}
+@keyframes preloader_1 {
+  0% {height:15px;transform:translateY(0px);background:#3c63ac;}
+  25% {height:120px;transform:translateY(60px);background:#3accc5;}
+  50% {height:15px;transform:translateY(0px);background:#3c63ac;}
+  100% {height:15px;transform:translateY(0px);background:#3c63ac;}
+}
+
+
+
+
+.animated {
+  -webkit-animation-duration: 12s;
+  animation-duration: 6s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: ease;
+  animation-iteration-count: infinite;
+ }
+ @-webkit-keyframes flash {
+  0%, 50%, 100% {
+  opacity: 1;
+  }
+ 25%, 75% {
+  opacity: 0;
+  }
+ }
+ @keyframes flash {
+  0%, 50%, 100% {
+  opacity: 1;
+  }
+ 25%, 75% {
+  opacity: 0;
+  }
+ }
+ .flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+ }
+
+
+
+/* FOOTER */
+
+ .footer_logo {
+   width: 90px;
+   height: 30px;
+ }
+
+ .ait {
+   position: absolute;
+   right: 5%;
+   bottom: 5px;
+ }
+
+ .gob {
+   position: absolute;
+   left: 5%;
+   bottom: -20px;
+   height: 90px;
+   width: 130px;
+ }
+
+ .footer_text {
+   font-family: Raleway-Bold;
+   font-size: 14px;
+   position: absolute;
+   right: 40%;
+   bottom: -10px;
+   text-decoration: none;
+   opacity: 50%;
+ }
+
+ .footer_1 {
+   width: 100%;
+   height: 40px;
+   background-color: #d1d1d1;
+   position: fixed;
+   bottom: -50px;
+   animation-name: animated_footer;
+   animation-duration: 1s;
+   animation-timing-function: ease-in;
+   animation-fill-mode: both;
+ }
+
+
+@keyframes animated_footer {
+  0% {
+    opacity: 0%;
+  }
+  25% {
+    opacity: 25%;
+  }
+
+  50% {
+    opacity: 50%;
+  }
+
+  75% {
+    opacity: 75%;
+  }
+
+  100% {
+    opacity: 100%;
+    position: fixed;
+    bottom: 0px;
+  }
+}
 
 
 
@@ -409,18 +639,6 @@ nav.circle ul li a:hover:after {
 
 
 </style>
-
-
-
-<br>
-<br>
-<br><br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 
 
 <!-- Fin Navbar -->
@@ -447,9 +665,35 @@ nav.circle ul li a:hover:after {
 } ?>
 </div>
 
+<br>
+<br>
+<br>
 
+
+
+<!-- FOOTER -->
+
+
+<?php $ano = new DateTime();
+$ano->setTimezone(new DateTimeZone('UTC'));
+$DateandTime = $ano->format("y");
+
+?>
+
+<div class="footer_1"> 
+    <img class="gob" src=" <?php echo url::base();?>/media/images/PNP42.png">
+    <h4 class="footer_text">© 20<?php echo $DateandTime; ?> - PDVSA AIT FALCÓN - Derechos Reservados </h4>
+    <img class="footer_logo ait" src=" <?php echo url::base(); ?>/media/images/somosAIT.png">
 </div>
 
+
+
+
+
+
+
+
+</div>
 
 
 
@@ -461,7 +705,8 @@ nav.circle ul li a:hover:after {
     window.addEventListener('load', () => {
 
         document.getElementById('contenido').style.display = 'block';
-        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('preloader_1').style.display = 'none';
+	document.getElementById('preloader_text').style.display = 'none';
 
     })
 </script>

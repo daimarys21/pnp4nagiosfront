@@ -1,5 +1,5 @@
 <!-- Docs Menu Start -->
-<div class="ui-widget">
+<div class="ui-widget" id="icon_box">
 <div class="p2 ui-widget-header ui-corner-top">
 <?php echo Kohana::lang('common.icon-box-header') ?>
 </div>

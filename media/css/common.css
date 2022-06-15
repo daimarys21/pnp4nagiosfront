@@ -1,5 +1,28 @@
+@font-face {
+  font-family: 'Raleway-Bold';
+  src: url('/pnp4nagios/media/fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+  font-family: Raleway-ExtraLight;
+  src: url('/pnp4nagios/media/fonts/Raleway-ExtraLight.ttf');
+}
+
+
+@font-face {
+  font-family: 'Raleway-Medium';
+  src: url('/pnp4nagios/media/fonts/Raleway-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Raleway-Regular';
+  src: url('/pnp4nagios/media/fonts/Raleway-Regular.ttf');
+}
+
+
+
 body {
-	font-family: sans-serif;
+	font-family: Raleway-Regular;
 	font-size: 16px;
 	background-color: #eff0f1;
 	color: #000000;
@@ -15,43 +38,10 @@ body {
 }
 
 #centrame {
-        width: 800px;
-        margin: 0 auto;
-
-}
-
-
-#preloader{
-  	padding: 20px;
-	position: absolute;
-  	top: 50%;
-  	left: 50%;
-  	margin: -25px 0 0 -25px;
-}
-
-
-
-.preloader {
-  width: 70px;
-  height: 70px;
-  border: 10px solid #df9595;
-  border-radius: 50%;
-  border-top: 10px solid #6e3131;
-  border-radius: 50%;
-  animation-name: girar;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-
-@keyframes girar {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+	margin-top: -2%;
 }
 
 
