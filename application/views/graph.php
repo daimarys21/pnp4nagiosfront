@@ -28,7 +28,7 @@
      		echo $status_box;
 	} ?>
 
-	<?php if (!empty($multisite_box)) {
+V	<?php if (!empty($multisite_box)) {
      		echo $multisite_box;
 	} ?>
 
@@ -61,7 +61,6 @@
 <script>
 
   window.addEventListener('load', () => {
-          document.getElementById('us').style.display = 'none';
           document.getElementById('de').style.display = 'none';
           document.getElementById('colores').style.display = 'none';
           document.getElementById('inicio').style.display = 'none';
